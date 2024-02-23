@@ -1,11 +1,12 @@
-package com.example.goaltracking
+package com.example.goaltracking.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.goaltracking.R
 
-class AddGoalActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_goal)
+        setContentView(R.layout.activity_main)
     }
 }
