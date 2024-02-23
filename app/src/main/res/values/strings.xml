@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Goal Tracking</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="goal_view">Goal List</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="add_btn">Add</string>
+    <string name="date">Date</string>
+    <string name="delete">Delete</string>
+    <string name="add_null">Null</string>
+    <string name="add_goal">Add Your Goal</string>
+    <string name="deadline">Deadline</string>
+    <string name="categories">Categories</string>
+
+    <string-array name="Categories">
+        <item>Personal</item>
+        <item>Professional</item>
+        <item>health</item>
+    </string-array>
+
+
+
+</resources>
