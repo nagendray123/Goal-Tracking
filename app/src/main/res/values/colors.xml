@@ -5,4 +5,12 @@
     <color name="blue">#03A9F4</color>
     <color name="clip">#9C27B0</color>
 
+
+    <color name="color_1">#FF6263</color>
+    <color name="color_2">#23C4ED</color>
+    <color name="color_3">#38CC77</color>
+    <color name="color_4">#D9D55B</color>
+    <color name="color_5">#31BBD1</color>
+    <color name="color_6">#D345D0</color>
+
 </resources>
