@@ -33,11 +33,11 @@ class GoalAdapter(private val context: Context, private val listener: GoalClickL
         holder.date.text = currentGoal.date
 
         // this method is use to goal_layout
-        holder.goals_layout.setOnClickListener {
+        holder.goalsLayout.setOnClickListener {
             listener.onItemClicked(goalList[holder.adapterPosition])
         }
-        holder.goals_layout.setOnLongClickListener {
-            listener.onLongItemClicked(goalList[holder.adapterPosition], holder.goals_layout)
+        holder.goalsLayout.setOnLongClickListener {
+            listener.onLongItemClicked(goalList[holder.adapterPosition], holder.goalsLayout)
             true
         }
     }
@@ -59,7 +59,7 @@ class GoalAdapter(private val context: Context, private val listener: GoalClickL
     }
 
     inner class GoalViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
-        val goals_layout = itemView.findViewById<CardView>(R.id.card_layout)
+        val goalsLayout: CardView = itemView.findViewById(R.id.card_layout)
         val title: TextView = itemView.findViewById(R.id.tv_title)
         val deadline: TextView = itemView.findViewById(R.id.tv_deadline)
         val categories: TextView = itemView.findViewById(R.id.tv_categories)

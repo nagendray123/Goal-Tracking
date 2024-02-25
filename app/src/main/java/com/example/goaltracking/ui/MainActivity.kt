@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity(), GoalAdapter.GoalClickListener, PopupMe
 
         // this method use to update goals
         viewModel = ViewModelProvider(this,
-         ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(GoalViewModel::class.java)
+            ViewModelProvider.AndroidViewModelFactory.getInstance(application))[GoalViewModel::class.java]
 
         viewModel.allgoals.observe(this){ list ->
             list?.let {
