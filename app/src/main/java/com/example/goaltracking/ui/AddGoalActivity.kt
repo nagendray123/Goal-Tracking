@@ -16,7 +16,7 @@ class AddGoalActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddGoalBinding
     private lateinit var goal: Goal
     private lateinit var oldGoal : Goal
-    var isUpdate = false
+    private var isUpdate = false
 
     @SuppressLint("SimpleDateFormat")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,12 +43,12 @@ class AddGoalActivity : AppCompatActivity() {
 
             if (title.isNotEmpty() || deadline.isNotEmpty() || categories.isNotEmpty() || description.isNotEmpty()){
                 val formatter = SimpleDateFormat("EEE, d MMM, yyyy HH:mm a")
-                if (isUpdate){
-                    goal = Goal(
+                goal = if (isUpdate){
+                    Goal(
                         oldGoal.id,title, deadline, categories, description, formatter.format(Date())
                     )
                 } else {
-                    goal = Goal(
+                    Goal(
                         null, title, deadline, categories, description, formatter.format(Date())
                     )
                 }

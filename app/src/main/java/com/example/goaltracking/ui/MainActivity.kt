@@ -22,9 +22,9 @@ class MainActivity : AppCompatActivity(), GoalAdapter.GoalClickListener, PopupMe
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var database: GoalDatabase
-    lateinit var viewModel: GoalViewModel
-    lateinit var adapter: GoalAdapter
-    lateinit var selectedGoal : Goal
+    private lateinit var viewModel: GoalViewModel
+    private lateinit var adapter: GoalAdapter
+    private lateinit var selectedGoal : Goal
 
     private val updateGoal = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result ->
         if(result.resultCode == Activity.RESULT_OK){

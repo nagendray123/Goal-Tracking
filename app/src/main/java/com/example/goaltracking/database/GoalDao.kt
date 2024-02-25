@@ -21,5 +21,5 @@ interface GoalDao {
 
 
     @Query("UPDATE goals_table Set title = :title, deadline = :deadline, categories = :categories, description = :description WHERE id = :id")
-    suspend fun update(id: Int, title: String, deadline: String, categories: String, description: String)
+    suspend fun update(id: Int?, title: String?, deadline: String?, categories: String?, description: String?)
 }

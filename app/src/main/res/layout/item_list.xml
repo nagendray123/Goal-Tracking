@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/card_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="8dp"
     app:cardCornerRadius="8dp">
@@ -22,8 +22,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/title"
-                android:textSize="18sp"/>
-
+                android:gravity="center"
+                android:textSize="25sp"/>
         </RelativeLayout>
 
         <TextView
@@ -31,13 +31,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/deadline"
-            android:textSize="14sp"/>
+            android:layout_marginStart="8dp"
+            android:textSize="16sp"/>
 
         <TextView
             android:id="@+id/tv_categories"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/categories"
+            android:layout_marginStart="8dp"
             android:textSize="14sp"/>
 
         <TextView
@@ -45,7 +47,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/description"
-            android:textSize="14sp"/>
+            android:layout_marginStart="8dp"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            android:layout_marginTop="25dp"
+
+            android:textSize="12sp"/>
         
     </LinearLayout>
 

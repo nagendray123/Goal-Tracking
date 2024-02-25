@@ -10,10 +10,10 @@ class GoalRepository(private val goalDao: GoalDao) {
     suspend fun insert(goal: Goal){
         goalDao.insert(goal)
     }
-    suspend fun delete(goal: Goal){
-        goalDao.delete(goal)
-    }
     suspend fun update(goal: Goal){
         goalDao.update(goal.id, goal.title, goal.deadline, goal.categories, goal.description)
+    }
+    suspend fun delete(goal: Goal){
+        goalDao.delete(goal)
     }
 }

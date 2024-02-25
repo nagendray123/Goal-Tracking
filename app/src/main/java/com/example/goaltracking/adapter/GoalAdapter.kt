@@ -1,5 +1,6 @@
 package com.example.goaltracking.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -9,14 +10,15 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.goaltracking.R
 import com.example.goaltracking.model.Goal
-import kotlin.random.Random
 
-class GoalAdapter(private val context: Context, val listener: GoalClickListener) : RecyclerView.Adapter<GoalAdapter.GoalViewHolder>() {
+class GoalAdapter(private val context: Context, private val listener: GoalClickListener) : RecyclerView.Adapter<GoalAdapter.GoalViewHolder>() {
 
+    // this arraylist is at show the data in given point of the RecyclerView
     private val goalList = ArrayList<Goal>()
+    // this arraylist is at fetch from the database
     private val fullList = ArrayList<Goal>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GoalAdapter.GoalViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GoalViewHolder {
        return GoalViewHolder(
            LayoutInflater.from(context).inflate(R.layout.item_list, parent, false)
        )
@@ -25,16 +27,10 @@ class GoalAdapter(private val context: Context, val listener: GoalClickListener)
     override fun onBindViewHolder(holder: GoalAdapter.GoalViewHolder, position: Int) {
         val currentGoal = goalList[position]
         holder.title.text = currentGoal.title
-        holder.title.isSelected = true
-
         holder.deadline.text = currentGoal.deadline
-        holder.deadline.isSelected = true
-
         holder.categories.text = currentGoal.categories
         holder.description.text = currentGoal.description
-
-        // this method is use to random background color
-        holder.goals_layout.setCardBackgroundColor(holder.itemView.resources.getColor(randomColor(), null))
+        holder.date.text = currentGoal.date
 
         // this method is use to goal_layout
         holder.goals_layout.setOnClickListener {
@@ -52,6 +48,7 @@ class GoalAdapter(private val context: Context, val listener: GoalClickListener)
 
     // this function is use to update Goal
 
+    @SuppressLint("NotifyDataSetChanged")
     fun updateList(newList: List<Goal>){
         fullList.clear()
         fullList.addAll(newList)
@@ -61,32 +58,19 @@ class GoalAdapter(private val context: Context, val listener: GoalClickListener)
         notifyDataSetChanged()
     }
 
-    // this function is use to  random color
-    fun randomColor(): Int {
-        val list = ArrayList<Int>()
-        list.add(R.color.color_1)
-        list.add(R.color.color_2)
-        list.add(R.color.color_3)
-        list.add(R.color.color_4)
-        list.add(R.color.color_5)
-        list.add(R.color.color_6)
-
-        val seed = System.currentTimeMillis().toInt()
-        val randomIndex = Random(seed).nextInt(list.size)
-        return list[randomIndex]
-
-    }
-
     inner class GoalViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         val goals_layout = itemView.findViewById<CardView>(R.id.card_layout)
-        val title = itemView.findViewById<TextView>(R.id.tv_title)
-        val deadline = itemView.findViewById<TextView>(R.id.tv_deadline)
-        val categories = itemView.findViewById<TextView>(R.id.tv_categories)
-        val description = itemView.findViewById<TextView>(R.id.tv_description)
+        val title: TextView = itemView.findViewById(R.id.tv_title)
+        val deadline: TextView = itemView.findViewById(R.id.tv_deadline)
+        val categories: TextView = itemView.findViewById(R.id.tv_categories)
+        val description: TextView = itemView.findViewById(R.id.tv_description)
+        val date: TextView = itemView.findViewById(R.id.tv_date)
     }
 
     interface GoalClickListener{
+        // this function is use to edit Goal
         fun onItemClicked(goal: Goal)
+        // this function is use to delete Goal
         fun onLongItemClicked(goal: Goal, cardView: CardView)
     }
 }

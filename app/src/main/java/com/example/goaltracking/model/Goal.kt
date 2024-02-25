@@ -8,9 +8,9 @@ import java.io.Serializable
 data class Goal(
     @PrimaryKey(autoGenerate = true)
     val id: Int?,
-    val title: String,
-    val deadline: String,
-    val categories: String,
-    val description: String,
-    val format: String
+    val title: String?,
+    val deadline: String?,
+    val categories: String?,
+    val description: String?,
+    val date : String?
 ): Serializable
