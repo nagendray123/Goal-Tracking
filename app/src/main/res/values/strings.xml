@@ -12,11 +12,13 @@
     <string name="deadline">Deadline</string>
     <string name="categories">Categories</string>
 
-    <string-array name="Categories">
+    <string-array name="categories_item">
         <item>Personal</item>
         <item>Professional</item>
         <item>health</item>
     </string-array>
+
+
 
 
 

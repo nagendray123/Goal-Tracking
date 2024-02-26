@@ -77,11 +77,13 @@
         android:minHeight="48dp"
         android:background="@drawable/round_outline"
         android:hint="@string/deadline"
-        android:inputType="date"
+        android:clickable="false"
+        android:focusable="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_title"
-        android:autofillHints="Date"/>
+        android:autofillHints="Date"
+        android:inputType="date" />
 
     <EditText
         android:id="@+id/et_categories"
@@ -98,6 +100,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_deadline"
         android:autofillHints="Categories"/>
+
 
     <EditText
         android:id="@+id/et_description"
@@ -116,5 +119,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_categories"
         android:autofillHints="Description" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        tools:ignore="MissingConstraints">
+
+        <AutoCompleteTextView
+            android:id="@+id/auto_complete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
