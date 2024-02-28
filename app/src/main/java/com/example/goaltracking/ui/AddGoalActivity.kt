@@ -33,13 +33,12 @@ class AddGoalActivity : AppCompatActivity() {
         binding = ActivityAddGoalBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val languages = resources.getStringArray(R.array.categories_item)
-        val arrayAdapter = ArrayAdapter(this, R.layout.dropdown_list, languages)
-        val autocompleteTV = findViewById<AutoCompleteTextView>(R.id.auto_complete)
 
+        // Dropdown List
+        val dropdown = resources.getStringArray(R.array.categories_item)
+        val arrayAdapter = ArrayAdapter(this, R.layout.dropdown_list, dropdown)
+        val autocompleteTV = findViewById<AutoCompleteTextView>(R.id.et_categories)
         autocompleteTV.setAdapter(arrayAdapter)
-
-
 
         // This function is use to calender
         dateView = findViewById(R.id.et_deadline)
