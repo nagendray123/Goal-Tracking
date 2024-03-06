@@ -24,15 +24,13 @@ class MainActivity : AppCompatActivity(), GoalAdapter.GoalClickListener, PopupMe
     private lateinit var database: GoalDatabase
     private lateinit var viewModel: GoalViewModel
     private lateinit var adapter: GoalAdapter
-    private lateinit var selectedGoal : Goal
+    private lateinit var selectedGoal: Goal
 
+    @Suppress("DEPRECATION")
     private val updateGoal = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result ->
         if(result.resultCode == Activity.RESULT_OK){
-
-            val goal = result.data?.getSerializableExtra("goal") as? Goal
-            if (goal != null){
-
-                viewModel.updateGoal(goal)
+            (result.data?.getSerializableExtra("goal") as? Goal)?.let {
+                viewModel.updateGoal(it)
             }
         }
     }
@@ -57,7 +55,7 @@ class MainActivity : AppCompatActivity(), GoalAdapter.GoalClickListener, PopupMe
 
          database = GoalDatabase.getDatabase(this)
     }
-
+    @Suppress("DEPRECATION")
     private fun initUI() {
       binding.recyclerView.setHasFixedSize(true)
         binding.recyclerView.layoutManager = StaggeredGridLayoutManager(2, LinearLayout.VERTICAL)

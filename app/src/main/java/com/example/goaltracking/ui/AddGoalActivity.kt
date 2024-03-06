@@ -16,7 +16,6 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
 
-
 class AddGoalActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAddGoalBinding
@@ -28,11 +27,11 @@ class AddGoalActivity : AppCompatActivity() {
     private lateinit var dateView: EditText
 
     @SuppressLint("SimpleDateFormat")
+    @Suppress("DEPRECATION")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddGoalBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
         // Dropdown List
         val dropdown = resources.getStringArray(R.array.categories_item)
@@ -96,7 +95,7 @@ class AddGoalActivity : AppCompatActivity() {
             }
         }
         binding.imgBack.setOnClickListener {
-            onBackPressedDispatcher.onBackPressed()
+            super.onBackPressed()
         }
     }
 }

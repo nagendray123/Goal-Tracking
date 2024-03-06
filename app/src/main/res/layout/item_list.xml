@@ -55,7 +55,6 @@
             android:layout_height="wrap_content"
             android:text="@string/date"
             android:layout_marginTop="25dp"
-
             android:textSize="12sp"/>
         
     </LinearLayout>
