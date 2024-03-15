@@ -46,7 +46,6 @@
                 app:srcCompat="@drawable/check_24"
                 tools:ignore="ContentDescription"/>
         </RelativeLayout>
-
     </androidx.appcompat.widget.Toolbar>
 
     <EditText
@@ -86,7 +85,6 @@
         android:autofillHints="Date"
         android:inputType="date" />
 
-
     <EditText
         android:id="@+id/et_description"
         android:layout_width="0dp"
@@ -111,7 +109,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="2dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -128,5 +126,4 @@
             android:text="@string/categories"/>
 
     </com.google.android.material.textfield.TextInputLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

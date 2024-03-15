@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.goaltracking.model.Goal
 
-@Database(entities = [Goal::class], version = 1, exportSchema = false)
+@Database(entities = [Goal::class], version = 1)
 abstract class GoalDatabase : RoomDatabase() {
 
     abstract fun getGoalDao() : GoalDao

@@ -40,6 +40,7 @@ class AddGoalActivity : AppCompatActivity() {
         autocompleteTV.setAdapter(arrayAdapter)
 
         // This function is use to calender
+
         dateView = findViewById(R.id.et_deadline)
         dateView.setOnClickListener{
             val calender = Calendar.getInstance()
@@ -48,6 +49,7 @@ class AddGoalActivity : AppCompatActivity() {
             val month = calender.get(Calendar.MONTH)
             val day = calender.get(Calendar.DAY_OF_MONTH)
 
+            @Suppress("NAME_SHADOWING")
             val datePickerDialog = DatePickerDialog(this, { _, year, monthOfYear, dayOfMonth ->
                     val date = (dayOfMonth.toString() + "." + (monthOfYear + 1) + "."  + year)
                     dateView.setText(date)

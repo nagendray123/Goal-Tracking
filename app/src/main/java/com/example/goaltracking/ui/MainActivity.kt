@@ -64,10 +64,11 @@ class MainActivity : AppCompatActivity(), GoalAdapter.GoalClickListener, PopupMe
 
         val getContent = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){result ->
             if (result.resultCode == Activity.RESULT_OK){
-               val goal = result.data?.getSerializableExtra("goal") as? Goal
-                if (goal != null){
-                    viewModel.insertGoal(goal)
+                (result.data?.getSerializableExtra("goal") as? Goal)?.let {
+                    viewModel.insertGoal(it)
                 }
+
+
             }
         }
 
