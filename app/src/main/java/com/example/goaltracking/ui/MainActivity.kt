@@ -67,8 +67,6 @@ class MainActivity : AppCompatActivity(), GoalAdapter.GoalClickListener, PopupMe
                 (result.data?.getSerializableExtra("goal") as? Goal)?.let {
                     viewModel.insertGoal(it)
                 }
-
-
             }
         }
 

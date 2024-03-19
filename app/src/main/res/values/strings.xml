@@ -12,17 +12,11 @@
     <string name="deadline">Deadline</string>
     <string name="categories">Categories</string>
 
-
     <string-array name="categories_item">
         <item>Personal</item>
         <item>Professional</item>
         <item>Health</item>
         <item>Learning</item>
-        <item>Performance</item>
-        <item>Family</item>
-        <item>Financial</item>
-        <item>Business</item>
-
     </string-array>
 
 
